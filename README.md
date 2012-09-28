@@ -2,6 +2,7 @@ SpotifyAVRCP
 ============
 
 Spotify + AVRCP - Add AVRCP metadata support to Spotify's Android app.
+(Find Pandora support at: https://github.com/loganakamatsu/PandoraAVRCP)
 
 AVRCP metadata support allows your bluetooth receiver (ie: car stereo) to show song data like **track,** **artist** and **album** while using Bluetooth A2DP audio streaming.
 Google Play Music has support for this, so why not Spotify?
