@@ -89,4 +89,3 @@ diff -crB original/smali/com/spotify/mobile/android/service/ad.smali com.spotify
       .line 44
       const-string v0, "paused"
   
-Only in com.spotify.mobile.android.ui-2/smali/com/spotify/mobile/android/ui/widget: .SpotifyWidget.smali.swp
