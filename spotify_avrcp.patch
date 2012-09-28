@@ -1,0 +1,92 @@
+diff -crB original/smali/com/spotify/mobile/android/service/ad.smali com.spotify.mobile.android.ui-2/smali/com/spotify/mobile/android/service/ad.smali
+*** original/smali/com/spotify/mobile/android/service/ad.smali	2012-09-28 12:31:09.000000000 -0400
+--- com.spotify.mobile.android.ui-2/smali/com/spotify/mobile/android/service/ad.smali	2012-09-28 11:56:07.000000000 -0400
+***************
+*** 135,146 ****
+  .end method
+  
+  .method public final d()V
+!     .locals 4
+  
+      .prologue
+      .line 37
+      new-instance v1, Landroid/content/Intent;
+  
+      const-string v0, "android.appwidget.action.APPWIDGET_UPDATE"
+  
+      invoke-direct {v1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+--- 135,158 ----
+  .end method
+  
+  .method public final d()V
+!     .locals 7
+  
+      .prologue
+      .line 37
+      new-instance v1, Landroid/content/Intent;
+  
++     new-instance v4, Landroid/content/Intent;
++ 
++     const-string v5, "com.android.music.metachanged"
++ 
++     invoke-direct {v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
++ 
++     const-string v5, "id"
++ 
++     const/4 v6, 0x1
++ 
++     invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
++ 
+      const-string v0, "android.appwidget.action.APPWIDGET_UPDATE"
+  
+      invoke-direct {v1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+***************
+*** 178,183 ****
+--- 190,199 ----
+  
+      invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+  
++     const-string v5, "track"
++ 
++     invoke-virtual {v4, v5, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
++ 
+      .line 42
+      const-string v0, "artist_name"
+  
+***************
+*** 189,194 ****
+--- 205,214 ----
+  
+      invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+  
++     const-string v5, "artist"
++ 
++     invoke-virtual {v4, v5, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
++ 
+      .line 43
+      const-string v0, "album_name"
+  
+***************
+*** 200,205 ****
+--- 220,239 ----
+  
+      invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+  
++ 		const-string v5, "album"
++ 
++     invoke-virtual {v4, v5, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
++ 
++ 		const-string v5, "playing"
++ 
++     const-string v6, "JustPlaying"
++ 
++     invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
++ 
++ 		iget-object v5, p0, Lcom/spotify/mobile/android/service/ad;->a:Landroid/app/Service;
++ 
++ 		invoke-virtual {v5, v4}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
++ 
+      .line 44
+      const-string v0, "paused"
+  
+Only in com.spotify.mobile.android.ui-2/smali/com/spotify/mobile/android/ui/widget: .SpotifyWidget.smali.swp
